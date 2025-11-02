@@ -50,7 +50,7 @@ function Icon({
 
 	return url?.includes('bsky.app') ? (
 		<FaBluesky {...props} />
-	) : url?.includes('facebook.com') ? (
+	) : url?.includes('facebook.com') || url?.includes('fb.me') ? (
 		<FaFacebookF {...props} />
 	) : url?.includes('github.com') ? (
 		<FaGithub {...props} />
