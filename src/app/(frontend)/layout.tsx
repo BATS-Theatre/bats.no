@@ -1,4 +1,5 @@
 // import { GoogleTagManager } from '@next/third-parties/google'
+import { Raleway } from 'next/font/google'
 import Root from '@/ui/Root'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import SkipToContent from '@/ui/SkipToContent'
@@ -8,7 +9,13 @@ import Footer from '@/ui/footer'
 import VisualEditingControls from '@/ui/VisualEditingControls'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import clsx from 'clsx'
 import '@/styles/app.css'
+
+const raleway = Raleway({
+	subsets: ['latin'],
+	display: 'swap',
+})
 
 export default async function RootLayout({
 	children,
@@ -18,7 +25,7 @@ export default async function RootLayout({
 	return (
 		<Root>
 			{/* <GoogleTagManager gtmId="" /> */}
-			<body className="bg-canvas text-ink antialiased">
+			<body className={clsx(raleway.className, 'bg-canvas text-ink antialiased')}>
 				<NuqsAdapter>
 					<SkipToContent />
 					<Announcement />
