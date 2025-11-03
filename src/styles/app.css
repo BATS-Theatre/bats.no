@@ -395,3 +395,27 @@
 		scroll-snap-align: center;
 	}
 }
+
+@utility burger {
+	@apply flex h-full flex-col items-center justify-center gap-1.5;
+
+	& > div {
+		@apply h-0.5 w-6 bg-canvas transition-all duration-300;
+	}
+
+	body:has(#header-toggle:checked) & > div {
+		transform-origin: center;
+	}
+
+	body:has(#header-toggle:checked) & > div:nth-child(2) {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	body:has(#header-toggle:checked) & > div:nth-child(3) {
+		transform: scaleX(0);
+	}
+
+	body:has(#header-toggle:checked) & > div:nth-child(4) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+}

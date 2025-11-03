@@ -1,10 +1,15 @@
+import { LuMenu, LuX } from 'react-icons/lu'
+
 export default function Toggle() {
 	return (
-		<label className="[grid-area:toggle] md:hidden">
+		<label
+			htmlFor="header-toggle"
+			className="burger [grid-area:toggle] z-50 md:hidden"
+		>
 			<input id="header-toggle" type="checkbox" hidden />
-
-			<span className="header-open:hidden">Open</span>
-			<span className="header-closed:hidden">Close</span>
+			<div />
+			<div />
+			<div />
 		</label>
 	)
 }
