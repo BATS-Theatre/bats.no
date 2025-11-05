@@ -25,7 +25,7 @@ export default async function RootLayout({
 	return (
 		<Root>
 			{/* <GoogleTagManager gtmId="" /> */}
-			<body className={clsx(raleway.className, 'bg-canvas text-ink antialiased')}>
+			<body className={clsx(raleway.className, 'bg-ink/90 text-canvas antialiased')}>
 				<NuqsAdapter>
 					<SkipToContent />
 					<Announcement />
