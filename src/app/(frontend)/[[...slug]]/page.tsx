@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Modules from '@/ui/modules'
 import processMetadata from '@/lib/processMetadata'
 import { client } from '@/sanity/lib/client'
+import { stegaClean } from '@sanity/client/stega'
 import { groq } from 'next-sanity'
 import { fetchSanityLive } from '@/sanity/lib/fetch'
 import {
@@ -71,7 +72,7 @@ async function getPage(params: Params) {
 
 	if (slug === 'index' && !page) throw new Error(errors.missingHomepage)
 
-	return page
+	return stegaClean(page)
 }
 
 type Params = { slug?: string[] }
